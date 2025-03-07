@@ -9,8 +9,10 @@ const del = require("./delete");
 
 const port = 1234;
 
-
 app.use(mymiddlewares.logger);
+app.use(mymiddlewares.authentiactor);
+app.use(mymiddlewares.borrowBook);
+app.use(mymiddlewares.returnBook);
 app.use(bodyParser.json());
 app.use(post);
 app.use(get);
